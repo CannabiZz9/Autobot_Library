@@ -5,7 +5,20 @@ Autobot_Library is a modular and efficient Arduino library designed to simplify 
 
 
 
-## Reference
+## Installation
+
+Download  [ArduinoRobot.h](https://github.com/CannabiZz9/Autobot_Library/blob/main/ArduinoRobot.h)
+
+Add to Arduino IDE``` #include "ArduinoRobot.h"```
+    
+## Demo
+
+[2-Wheel Differential Drive Robot](https://github.com/CannabiZz9/Autobot_Library/tree/main/Arduino-client-diff)
+
+[4-Wheel Mecanum Drive Robot](https://github.com/CannabiZz9/Autobot_Library/tree/main/Arduino-client-mac)
+
+
+## Function Reference
 
 #### **Create Class Robot(Init)**
 
@@ -107,6 +120,7 @@ use to receive (speed, dir, ang) from pi and drive robot.
 ```
   piComm.handle(); 
 ```
+
 
 
 #
