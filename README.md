@@ -12,7 +12,7 @@ Hardware and software required for basic robot movement (without AI).
 ### Hardware
 * **Microcontroller:** ESP32 Development Board (Recommended for `HardwareSerial` support).
 * **Motor Driver:** PWM-compatible driver (e.g., L298N, TB6612FNG).
-    * 2 Channels for Differential Drive.
+    * 2/4 Channels for Differential Drive.
     * 4 Channels for Mecanum/Omni Drive.
 * **Motors:** DC Motors (2 or 4 units depending on drive type).
 * **Power Supply:** Li-ion Battery (2S or 3S) suitable for your motors.
