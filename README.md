@@ -3,6 +3,54 @@
 
 Autobot_Library is a modular and efficient Arduino library designed to simplify mobile robot development. It abstracts complex kinematics for various drive types and provides built-in communication handlers for remote control via WiFi (UDP) or AI coprocessors (Raspberry Pi/Jetson)
 
+# Requirements
+
+# Requirements
+
+## 1. Arduino (Basic Control)
+Hardware and software required for basic robot movement (without AI).
+
+### Hardware
+* **Microcontroller:** ESP32 Development Board (Recommended for `HardwareSerial` support).
+* **Motor Driver:** PWM-compatible driver (e.g., L298N, TB6612FNG).
+    * 2 Channels for Differential Drive.
+    * 4 Channels for Mecanum/Omni Drive.
+* **Motors:** DC Motors (2 or 4 units depending on drive type).
+* **Power Supply:** Li-ion Battery (2S or 3S) suitable for your motors.
+
+### Software
+* **Arduino IDE:** Latest version.
+* **Library:** `ArduinoRobot.h` (Must be included in your project folder).
+
+---
+
+## 2. Arduino + Raspberry Pi (AI & Vision)
+Additional requirements for Human Tracking and Line Tracking features.
+
+### Hardware
+* **SBC:** Raspberry Pi 4 or 5 (Recommended for YOLOv8 performance).
+* **Camera:** USB Webcam or Raspberry Pi Camera.
+* **Connection:** 3x Jumper wires for UART communication (RX, TX, GND).
+
+### Wiring (ESP32 <-> Raspberry Pi)
+Connect the ESP32 to the Raspberry Pi GPIO headers as follows:
+
+| Signal | ESP32 Pin | Raspberry Pi Pin |
+| :--- | :--- | :--- |
+| **RX** | Pin 16 | GPIO 14 (TXD) |
+| **TX** | Pin 17 | GPIO 15 (RXD) |
+| **GND** | GND | GND |
+
+### Python Dependencies (Raspberry Pi)
+Run the following commands on your Raspberry Pi to install necessary libraries:
+
+```bash
+# System dependencies
+sudo apt-get install libopencv-dev python3-pip
+
+# Python libraries
+pip install opencv-python-headless numpy gpiod pyserial ultralytics
+```
 
 
 ## Installation
